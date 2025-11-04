@@ -93,7 +93,7 @@ function Login() {
           </p>
           <div className="login-links">
             <a
-              href="https://xs637603.xsrv.jp/babco/level3/public/kamokita/index.html"
+              href="https://xs637603.xsrv.jp/babco/level3/public/kamokita/index.php"
               target="_blank"
               rel="noopener"
               className="login-link"
