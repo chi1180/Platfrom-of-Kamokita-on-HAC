@@ -2,8 +2,8 @@ import axios from "axios";
 
 // 開発環境ではプロキシを使用、本番環境では直接APIを呼び出す
 const API_BASE_URL = import.meta.env.DEV
-  ? "/api"
-  : "https://hac.hiroshima-aiclub.org";
+  ? "https://bff-for-better-hac.onrender.com"
+  : "https://bff-for-better-hac.onrender.com";
 
 class AuthService {
   constructor() {

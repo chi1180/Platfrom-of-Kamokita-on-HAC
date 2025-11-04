@@ -99,6 +99,19 @@ app.post("/login_process.php", async (req, res) => {
     forwardCookies(response, res);
 
     console.log("Login response status:", response.status);
+    console.log("Login response headers", response.headers);
+
+    // リダイレクト(302)の場合、成功として扱う
+    if (response.status === 302) {
+      console.log("Login successful (redirect received)");
+      return res.status(200).json({
+        success: true,
+        message: "ログインに成功しました",
+        redirectUrl: response.headers.location,
+      });
+    }
+
+    // それ以外の場合はそのまま返す
     res.status(response.status).json(response.data);
   } catch (error) {
     console.error("Login error:", error.message);
