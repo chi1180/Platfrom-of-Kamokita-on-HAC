@@ -111,7 +111,7 @@ function Dashboard() {
         <main className="dashboard-main">
           <div className="welcome-section">
             <h2>ようこそ！</h2>
-            <p>ひろしまAI部のHAC for Studentへようこそ。</p>
+            <p>賀茂北高校のBetter HAC for Studentへようこそ。</p>
           </div>
 
           <div className="dashboard-grid">
@@ -180,8 +180,11 @@ function Dashboard() {
             <div className="info-card">
               <h3>📖 利用ガイド</h3>
               <p>
-                HAC for Studentの使い方については、
-                <a href="#" className="info-link">
+                Better HAC for Studentの使い方については、
+                <a
+                  href="https://hac.hiroshima-aiclub.org/assets/HACforStudent_guide_070716.pdf"
+                  className="info-link"
+                >
                   利用ガイドライン
                 </a>
                 をご確認ください。
@@ -191,8 +194,15 @@ function Dashboard() {
             <div className="info-card">
               <h3>💡 お知らせ</h3>
               <p>
-                このシステムは賀茂北高等学校とひろしまAI部による
-                改善版プロトタイプです。フィードバックをお待ちしています。
+                このシステムは賀茂北高等学校AI部よる 改善版プロトタイプです。
+                <br />
+                <a
+                  href="mailto:041-06-024@g.hiroshima-c.ed.jp"
+                  className="info-link"
+                >
+                  フィードバック
+                </a>
+                をお待ちしています。
               </p>
             </div>
           </div>
