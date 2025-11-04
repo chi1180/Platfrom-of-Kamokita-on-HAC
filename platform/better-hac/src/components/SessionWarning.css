@@ -1,0 +1,129 @@
+.session-warning-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.session-warning-modal {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.warning-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.session-warning-modal h2 {
+  color: #333;
+  margin: 0 0 15px 0;
+  font-size: 22px;
+}
+
+.session-warning-modal p {
+  color: #666;
+  line-height: 1.8;
+  margin: 0 0 30px 0;
+  font-size: 15px;
+}
+
+.warning-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.continue-button,
+.logout-button-warning {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.continue-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.continue-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.logout-button-warning {
+  background: white;
+  color: #666;
+  border: 2px solid #e1e8ed;
+}
+
+.logout-button-warning:hover {
+  background: #f8f9fa;
+  border-color: #ccc;
+}
+
+@media (max-width: 480px) {
+  .session-warning-modal {
+    padding: 30px 20px;
+  }
+
+  .session-warning-modal h2 {
+    font-size: 18px;
+  }
+
+  .warning-actions {
+    flex-direction: column;
+  }
+
+  .continue-button,
+  .logout-button-warning {
+    width: 100%;
+  }
+}

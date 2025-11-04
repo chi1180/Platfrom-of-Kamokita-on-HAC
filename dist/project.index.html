@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="jp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kamokita high school products hosted on Babco</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Noto Sans JP", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      .body {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+
+        .header {
+          width: 100vw;
+          height: 120px;
+          background: rgba(0, 0, 0, 0.8);
+          backdrop-filter: blur(20px);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 1000;
+          font-size: 13px;
+          color: white;
+
+          :before {
+            content: "- ";
+          }
+
+          :after {
+            content: " -";
+          }
+        }
+
+        .main {
+          width: 60%;
+          min-width: 800px;
+          margin-inline: auto;
+          height: 100%;
+          padding: 40px;
+          border-radius: 20px;
+
+          h1 {
+            margin-bottom: 20px;
+          }
+
+          h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+          }
+          ol,
+          ul {
+            margin-left: 20px;
+            margin-top: 10px;
+            list-style: inside;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body class="body">
+    <header class="header">
+      <h1 class="header-title">Kamokita @ Babco</h1>
+    </header>
+
+    <main class="main" id="main"></main>
+    <script>
+      const DETAIL = `# What's this page? 🤔
+
+    このページは、広島AIクラブ 2025年の賀茂北高等学校のプロジェクトを [Babco](https://xs637603.xsrv.jp/babco/) でホストしているドキュメントページです。以下に、今年度のプロジェクト一覧を記載しています。
+
+    ##　Projects 🚀
+
+    - [オンデマンドバスシュミレータ ver.1](./project.ondemand-bus.html)
+    - [↑ver.2](https://xs637603.xsrv.jp/babco/level3/preview.php?file=index%281%29.html)`;
+
+      /* ------------------------------ */
+
+      const detailsElement = document.getElementById("main");
+      const renderedContent = marked.parse(DETAIL);
+      detailsElement.innerHTML = renderedContent;
+
+      // for developers
+
+      console.log(
+        "%c Hello, Developer_",
+        "color: #eaeaea; font-size: 24px; font-weight: bold;",
+      );
+      const MESSAGE = `やっほーっ！　君はDeveloperだね！
+
+    このページは広島AI部のサービス「Babco」でホストされているよ！
+    もしこのページでバグや不具合を見つけたら、ぜひとも以下のメールに連絡してほしい！
+    Email: 041-06-024@g.hiroshima-c.ed.jp
+
+    Thanks_
+    `;
+      console.log(MESSAGE);
+    </script>
+  </body>
+</html>
