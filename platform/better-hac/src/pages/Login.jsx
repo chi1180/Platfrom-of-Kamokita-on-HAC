@@ -101,7 +101,7 @@ function Login() {
               賀茂北 AI club
             </a>
             <a
-              href="https://hac.hiroshima-aiclub.org/"
+              href="https://github.com/chi1180/Platfrom-of-Kamokita-on-HAC"
               target="_blank"
               rel="noopener"
               className="login-link"
