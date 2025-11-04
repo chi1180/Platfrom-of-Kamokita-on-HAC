@@ -29,6 +29,11 @@
   font-weight: 600;
 }
 
+.accented-text {
+  color: var(--accent-600);
+  font-weight: 1000;
+}
+
 .login-subtitle {
   font-size: 16px;
   color: var(--text-secondary);

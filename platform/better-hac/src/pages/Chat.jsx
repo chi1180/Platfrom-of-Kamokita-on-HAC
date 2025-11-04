@@ -1,7 +1,11 @@
 import { useState, useEffect, useRef } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
 import chatService from "../services/chat";
 import { useToast } from "../hooks/useToast";
 import "./Chat.css";
+import "highlight.js/styles/github-dark.css";
 
 function Chat({ onTabChange, onLogout, userEmail }) {
   const [threads, setThreads] = useState([]);
@@ -150,7 +154,10 @@ function Chat({ onTabChange, onLogout, userEmail }) {
     <div className="chat-container">
       <div className="chat-header">
         <div className="chat-header-content">
-          <h1>HAC for Student</h1>
+          <h1>
+            <span className="accented-text">Better</span>
+            &nbsp;HAC for Student
+          </h1>
           <div className="chat-user-info">
             <span className="chat-user-email">{userEmail}</span>
             <button onClick={onLogout} className="chat-logout-button">
@@ -267,7 +274,37 @@ function Chat({ onTabChange, onLogout, userEmail }) {
             ) : (
               messages.map((msg, idx) => (
                 <div key={idx} className={`message ${msg.role}`}>
-                  <div className="message-content">{msg.content}</div>
+                  <div className="message-content">
+                    {msg.role === "assistant" ? (
+                      <ReactMarkdown
+                        remarkPlugins={[remarkGfm]}
+                        rehypePlugins={[rehypeHighlight]}
+                        components={{
+                          code({
+                            node,
+                            inline,
+                            className,
+                            children,
+                            ...props
+                          }) {
+                            return inline ? (
+                              <code className={className} {...props}>
+                                {children}
+                              </code>
+                            ) : (
+                              <code className={className} {...props}>
+                                {children}
+                              </code>
+                            );
+                          },
+                        }}
+                      >
+                        {msg.content}
+                      </ReactMarkdown>
+                    ) : (
+                      msg.content
+                    )}
+                  </div>
                 </div>
               ))
             )}

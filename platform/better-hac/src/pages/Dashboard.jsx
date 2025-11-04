@@ -72,7 +72,10 @@ function Dashboard() {
       {activeTab !== "chat" && (
         <header className="dashboard-header">
           <div className="header-content">
-            <h1>HAC for Student</h1>
+            <h1>
+              <span className="accented-text">Better</span>
+              &nbsp;HAC for Student
+            </h1>
             <div className="user-info">
               <span className="user-email">{user?.email}</span>
               <button onClick={handleLogout} className="logout-button">

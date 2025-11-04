@@ -36,9 +36,9 @@ function Login() {
           <h1>
             Hiroshima AI club
             <br />
-            HAC
+            <span className="accented-text">Better</span>
             <br />
-            for student
+            HAC for student
           </h1>
           <p className="login-subtitle">ログイン</p>
         </div>
