@@ -2,7 +2,7 @@ import axios from "axios";
 
 // 開発環境ではプロキシを使用、本番環境では直接APIを呼び出す
 const API_BASE_URL = import.meta.env.DEV
-  ? "https://bff-for-better-hac.onrender.com"
+  ? "/api"
   : "https://bff-for-better-hac.onrender.com";
 
 class AuthService {

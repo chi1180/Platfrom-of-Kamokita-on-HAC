@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API_BASE_URL = import.meta.env.DEV
-  ? "https://bff-for-better-hac.onrender.com"
+  ? "/api"
   : "https://bff-for-better-hac.onrender.com";
 
 class ImageService {
