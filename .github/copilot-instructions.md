@@ -30,6 +30,55 @@
 本アプリはdist&platformディレクトリに大きく分けられます。
 distでは個々のアプリがペライチのHTMLになり、platformではサービスごとにReactベースでの開発が行われます。
 
+### platform/better-hac の構成
+
+Reactベースのフロントエンドアプリケーション。Viteを使用してビルドされます。
+
+### platform/better-hac-bff の構成
+
+**BFF (Backend For Frontend)**: Express.jsベースのプロキシサーバー
+
+- HAC本体APIとフロントエンドの間に位置し、CORS問題を解決
+- クッキーベースの認証情報を適切に転送
+- エンドポイント: 各種HAC APIへのプロキシ
+
+---
+
+## better-hac の詳細構成
+
+#### 認証システム
+
+- **メイン認証** (`services/auth.js`): HAC全体の認証を管理
+
+#### コンテキスト
+
+- **ToastContext** (`contexts/ToastContext.jsx`): トースト通知の管理
+
+#### ページ構成
+
+- **Login** (`pages/Login.jsx`): HAC全体のログインページ
+- **Dashboard** (`pages/Dashboard.jsx`): メインダッシュボード、タブ切り替え機能
+- **Chat** (`pages/Chat.jsx`): チャット機能
+- **ImageGen** (`pages/ImageGen.jsx`): 画像生成機能
+
+#### コンポーネント
+
+- **SessionWarning** (`components/SessionWarning.jsx`): セッション警告モーダル
+- **Toast** (`components/Toast.jsx`): 個別トースト通知コンポーネント
+- **ToastContainer** (`components/ToastContainer.jsx`): トースト表示コンテナ
+
+#### カスタムフック
+
+- **useSessionMonitor** (`hooks/useSessionMonitor.js`): セッション監視とアイドル検知
+- **useToast** (`hooks/useToast.js`): トースト通知の表示制御
+
+#### サービス層
+
+- `services/auth.js`: メイン認証サービス
+- `services/chat.js`: チャットAPI通信
+- `services/image.js`: 画像生成API通信
+- `services/imageStorage.js`: 画像ストレージ管理
+
 ## コーディング規約・ベストプラクティス
 
 ### コード編集後に毎回すべきこと
